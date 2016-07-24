@@ -4,7 +4,7 @@
   "main": "main.js",
   "dependencies": {
     "ace-builds": "^1.2.2",
-    "ace-editor": "^1.2.0",
-    "ejs": "^2.4.2"
+    "ejs": "^2.4.2",
+    "litelog": "1.1.0"
   }
 }

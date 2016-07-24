@@ -10,19 +10,32 @@
     <body></body>
     <script type="text/javascript">
         (function() {
-            function router
-            var hash = location.hash.substr(2);
-            var url = require('url');
-            var router = url.parse(hash, true);
-            var path = require('path');
-            /**
-             * router {
-             *     pathname: 路径
-             *     query: 查询参数
-             * }
-             * @type {String}
-             */
-            require(path.join(__dirname, '../controller', router.pathname)).init(router.query);
+            var log = require('../lib/log');
+            var lastApp;
+            function router() {
+              var hash = location.hash.substr(2);
+              var url = require('url');
+              /**
+               * router {
+               *     pathname: 路径
+               *     query: 查询参数
+               * }
+               * @type {String}
+               */
+              var router = url.parse(hash, true);
+              var path = require('path');
+
+              if (lastApp) {
+                lastApp.destroy();
+              }
+              lastApp = require(path.join(__dirname, '../controller', router.pathname)).init(router.query);
+            }
+            window.addEventListener('hashchange', function () {
+              log.debug('hashchange');
+              router();
+            }, false);
+            log.debug('init default app');
+            router();
         })();
     </script>
     <script type="text/javascript" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_SVG"></script>

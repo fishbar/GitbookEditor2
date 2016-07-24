@@ -1,4 +1,12 @@
+/*!
+ * GitbookEditor2: main.js
+ * Authors  : fish <zhengxinlin@gmail.com> (https://github.com/fishbar)
+ * Create   : 2016-07-24 11:52:58
+ * CopyRight 2016 (c) Fish And Other Contributors
+ */
 'use strict';
+const config = require('./config');
+const log = require('./lib/log');
 // require('electron-cookies');
 const electron = require('electron');
 const app = electron.app;  // Module to control application life.
@@ -26,7 +34,7 @@ app.on('window-all-closed', function () {
 });
 
 app.on('quit', function () {
-  console.log('>>>>>>>> quit');
+  log.warn('app quit');
 });
 
 // This method will be called when Electron has done everything
