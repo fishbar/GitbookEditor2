@@ -20,15 +20,15 @@
     "author": "Samy Pesse <samypesse@gmail.com>",
     "license": "Apache 2",
     "dependencies": {
-        "gitbook": "1.0.3",
-        "send": "0.2.0",
+        "gitbook": "3.0.0",
+        "send": "0.15.5",
         "mixpanel": "0.0.19",
         "wrench": "1.5.8",
         "semver": "2.2.1",
-        "request": "2.27.0",
+        "request": "2.81.0",
         "normall": "0.0.2",
         "gitbook-api": "0.1.0",
-        "npmi": "0.0.12",
+        "npmi": "2.0.1",
         "kramed": "0.4.2"
     },
     "devDependencies": {
